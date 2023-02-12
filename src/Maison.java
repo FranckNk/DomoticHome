@@ -29,6 +29,9 @@ public class Maison {
         return this.Automatisee;
     }
 
+    /*
+     * Généreation du String de l'instance de la classe.
+     */
     @Override
     public String toString() {
         return "Maison : {" +
@@ -37,4 +40,13 @@ public class Maison {
             ", Automatisee = " + (isAutomatisee() ? "OUI" : "NON") +
             " }";
     }
+
+    /**
+     * Fonction qui sera exécutée avant l'appel du Gabage Collector de Java, pour libérer la mémoire.
+     * 
+     */
+    protected void finalize(){
+        System.out.println("Désactivation de l'automation de la maison...\n");
+    }
+
 }

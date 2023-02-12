@@ -1,6 +1,6 @@
 /*
 
-TITRE          : Classe Chambre
+TITRE          : Classe Salon
 AUTEUR         : Franck Nkeubou Awougang
 DATE           : 12/02/2023
 DESCRIPTION    : Cette classe hérite de "Piece" car c'est une pièce de la maison.
@@ -8,13 +8,13 @@ VERSION        : 0.0.1
 
 */
 
-class Chambre extends Piece{
+final class Salon extends Piece{
 
-    Chambre(String nom) {
-        super(nom); // Appel du constructeur de la classe "Piece" avec le nom de la chambre 
+    Salon(String nom) {
+        super(nom); // Appel du constructeur de la classe "Piece" avec le nom du salon 
     }
     /***
-     * Fonction permettant d'ouvrir les lumières de la chambre
+     * Fonction permettant d'ouvrir les lumières du salon
      */
     @Override
     void OpenLights(){
@@ -22,11 +22,11 @@ class Chambre extends Piece{
             System.out.println("Impossible, déjà allumées...");
             return;
         }
-        System.out.println("Allumage des lumières de la chambre..");
+        System.out.println("Allumage des lumières du salon..");
         Lights = true;
     }
     /***
-     * Fonction permettant de fermer les lumières de la chambre
+     * Fonction permettant de fermer les lumières du salon
      */
     @Override
     void CloseLights(){
@@ -34,11 +34,11 @@ class Chambre extends Piece{
             System.out.println("Impossible, déjà éteintes...");
             return;
         }
-        System.out.println("Extinction des lumières de la chambre..");
+        System.out.println("Extinction des lumières du salon..");
         Lights = false; 
     }
     /***
-     * Fonction permettant d'ouvrir le ventilateur de la chambre
+     * Fonction permettant d'ouvrir le ventilateur du salon
      */
     @Override
     void OpenFan(){
@@ -46,11 +46,11 @@ class Chambre extends Piece{
             System.out.println("Impossible, déjà activé...");
             return;
         }
-        System.out.println("Activation du ventilateur de la chambre..");
+        System.out.println("Activation du ventilateur du salon..");
         Fan = true;
     }
     /***
-     * Fonction permettant de désactiver le ventilateur de la chambre
+     * Fonction permettant de désactiver le ventilateur du salon
      */
     @Override
     void CloseFan(){
@@ -58,11 +58,11 @@ class Chambre extends Piece{
             System.out.println("Impossible, déjà arrêté...");
             return;
         }
-        System.out.println("Arrêt du ventilateur de la chambre..");
+        System.out.println("Arrêt du ventilateur du salon..");
         Fan = false; 
     }
     /***
-     * Fonction permettant d'ouvrir la porte de la chambre.
+     * Fonction permettant d'ouvrir la porte du salon.
      */
     @Override
     void OpenDoor(){
@@ -70,11 +70,11 @@ class Chambre extends Piece{
             System.out.println("Impossible, déjà ouvert...");
             return;
         }
-        System.out.println("Ouverture de la porte de la chambre..");
+        System.out.println("Ouverture de la porte du salon..");
         Door = true;
     }
     /***
-     * Fonction permettant de fermer la porte de la chambre
+     * Fonction permettant de fermer la porte du salon
      */
     @Override
     void CloseDoor(){
@@ -82,7 +82,7 @@ class Chambre extends Piece{
             System.out.println("Impossible, déjà fermée...");
             return;
         }
-        System.out.println("Fermeture de la porte de la chambre..");
+        System.out.println("Fermeture de la porte du salon..");
         Door = false; 
     }
 
