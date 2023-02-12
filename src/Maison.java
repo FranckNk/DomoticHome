@@ -9,39 +9,20 @@ VERSION        : 0.0.1
 */
 
 public class Maison {
-    String pays;
-    String Ville;
+    final String pays = "Canada";
+    final String Ville = "Bathurst";
     boolean Automatisee = false;
 
-    public Maison(String pays, String Ville) {
-        this.pays = pays;
-        this.Ville = Ville;
-        this.Automatisee = true;
-    }
-
     public Maison() {
-    }
-
-    public Maison(String pays, String Ville, boolean Automatisee) {
-        this.pays = pays;
-        this.Ville = Ville;
-        this.Automatisee = Automatisee;
+        this.Automatisee = true;
     }
 
     public String getPays() {
         return this.pays;
     }
 
-    public void setPays(String pays) {
-        this.pays = pays;
-    }
-
     public String getVille() {
         return this.Ville;
-    }
-
-    public void setVille(String Ville) {
-        this.Ville = Ville;
     }
 
     public boolean isAutomatisee() {
@@ -50,10 +31,10 @@ public class Maison {
 
     @Override
     public String toString() {
-        return "{" +
-            " pays='" + getPays() + "'" +
-            ", Ville='" + getVille() + "'" +
-            ", Automatisee='" + isAutomatisee() + "'" +
-            "}";
+        return "Maison : {" +
+            " Pays = " + getPays() + "'" +
+            ", Ville = " + getVille() + "'" +
+            ", Automatisee = " + (isAutomatisee() ? "OUI" : "NON") +
+            " }";
     }
 }
