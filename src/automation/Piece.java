@@ -1,3 +1,15 @@
+/*
+
+TITRE          : Classe Pièce, qui représente chaque pièce de la maison
+AUTEUR         : Franck Nkeubou Awougang
+DATE           : 13/02/2023
+DESCRIPTION    : Donner une description du programme
+VERSION        : 0.0.1
+
+*/
+
+
+
 package automation;
 
 abstract public class Piece extends Maison {

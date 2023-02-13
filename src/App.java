@@ -1,11 +1,24 @@
-import automation.*;
+/*
 
-import java.util.ArrayList;
-import java.util.Arrays;
+TITRE          : Classe permettant de tester notre maison automatique
+AUTEUR         : Franck Nkeubou Awougang
+DATE           : 13/02/2023
+DESCRIPTION    : En utilisant le package automation, on va pourvoir testesr les classes écrites
+VERSION        : 0.0.1
+
+*/
+
+import automation.*;
 import java.util.Scanner;
 
 public class App {
 
+    /**
+     * Fonction pour lire un entier entre deux bornes précises  
+     * @param borneA borne inférieure
+     * @param borneB borne supérieure
+     * @return retourne un entier vérifié, compris entre BorneA et BorneB
+     */
     public static int LireEntier(int borneA, int borneB) {
         int input = 0;
         Scanner sc = new Scanner(System.in);
@@ -73,6 +86,7 @@ public class App {
         Cuisine maCuisine = new Cuisine("CuisineFranck");
         Salon monSalon = new Salon("SalonFranck");
         do{
+            // Effectuons les actions du premier menu
             choix = Menu1();
             switch (choix){
                 case 1 :
@@ -89,6 +103,7 @@ public class App {
                     break;
                 case 4 : {
                     do{
+                        // Les actions pour contrôler les pièces.
                         choix2 = Menu2();
                         switch (choix2){
                             case 1 :
@@ -162,7 +177,10 @@ public class App {
                     break;
             }
         }while(choix != 5);
-        
-
+        // Test du finalise
+        maChambre = null;
+        maCuisine = null;
+        monSalon = null;
+        System.gc();
     }
 }
