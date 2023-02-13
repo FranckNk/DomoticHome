@@ -7,17 +7,20 @@ DESCRIPTION    : Cette classe hérite de "Piece" car c'est une pièce de la mais
 VERSION        : 0.0.1
 
 */
+package automation;
 
-class Chambre extends Piece{
+final public class Chambre extends Piece{
+    
+    boolean Fan = false;
 
-    Chambre(String nom) {
+    public Chambre(String nom) {
         super(nom); // Appel du constructeur de la classe "Piece" avec le nom de la chambre 
     }
     /***
      * Fonction permettant d'ouvrir les lumières de la chambre
      */
     @Override
-    void OpenLights(){
+    public void OpenLights(){
         if(Lights){
             System.out.println("Impossible, déjà allumées...");
             return;
@@ -29,7 +32,7 @@ class Chambre extends Piece{
      * Fonction permettant de fermer les lumières de la chambre
      */
     @Override
-    void CloseLights(){
+    public void CloseLights(){
         if(!Lights){
             System.out.println("Impossible, déjà éteintes...");
             return;
@@ -40,8 +43,7 @@ class Chambre extends Piece{
     /***
      * Fonction permettant d'ouvrir le ventilateur de la chambre
      */
-    @Override
-    void OpenFan(){
+    public void OpenFan(){
         if(Fan){
             System.out.println("Impossible, déjà activé...");
             return;
@@ -52,8 +54,7 @@ class Chambre extends Piece{
     /***
      * Fonction permettant de désactiver le ventilateur de la chambre
      */
-    @Override
-    void CloseFan(){
+    public void CloseFan(){
         if(!Fan){
             System.out.println("Impossible, déjà arrêté...");
             return;
@@ -61,29 +62,20 @@ class Chambre extends Piece{
         System.out.println("Arrêt du ventilateur de la chambre..");
         Fan = false; 
     }
-    /***
-     * Fonction permettant d'ouvrir la porte de la chambre.
+    /**
+     * Foncton pour afficher toutes les informations de la pièce : 
+     * La pièce est la chambre
      */
-    @Override
-    void OpenDoor(){
-        if(Door){
-            System.out.println("Impossible, déjà ouvert...");
-            return;
-        }
-        System.out.println("Ouverture de la porte de la chambre..");
-        Door = true;
-    }
-    /***
-     * Fonction permettant de fermer la porte de la chambre
+    public void DisplayStatutPiece() {
+        System.out.println("Piece : " + NomPiece);
+        System.out.println("Light : " + (Lights ? "ON" : "OFF"));
+        System.out.println("Ventilateur : " + (Fan ? "ON" : "OFF"));
+      }
+    /**
+     * Fonction qui sera exécutée avant l'appel du Gabage Collector de Java, pour libérer la mémoire.
+     * 
      */
-    @Override
-    void CloseDoor(){
-        if(Door){
-            System.out.println("Impossible, déjà fermée...");
-            return;
-        }
-        System.out.println("Fermeture de la porte de la chambre..");
-        Door = false; 
+    protected void finalize(){
+        System.out.println("Désactivation de l'automation de la chambre...\n");
     }
-
 }

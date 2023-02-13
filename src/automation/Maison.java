@@ -7,6 +7,7 @@ DESCRIPTION    : Cette classe défini la maison qui sera rendue automatique.
 VERSION        : 0.0.1
 
 */
+package automation;
 
 public class Maison {
     final String pays = "Canada";

@@ -8,16 +8,19 @@ VERSION        : 0.0.1
 
 */
 
-final class Salon extends Piece{
+package automation;
 
-    Salon(String nom) {
+final public class Salon extends Piece{
+
+    boolean Door = false;
+    public Salon(String nom) {
         super(nom); // Appel du constructeur de la classe "Piece" avec le nom du salon 
     }
     /***
      * Fonction permettant d'ouvrir les lumières du salon
      */
     @Override
-    void OpenLights(){
+    public void OpenLights(){
         if(Lights){
             System.out.println("Impossible, déjà allumées...");
             return;
@@ -29,7 +32,7 @@ final class Salon extends Piece{
      * Fonction permettant de fermer les lumières du salon
      */
     @Override
-    void CloseLights(){
+    public void CloseLights(){
         if(!Lights){
             System.out.println("Impossible, déjà éteintes...");
             return;
@@ -38,34 +41,9 @@ final class Salon extends Piece{
         Lights = false; 
     }
     /***
-     * Fonction permettant d'ouvrir le ventilateur du salon
-     */
-    @Override
-    void OpenFan(){
-        if(Fan){
-            System.out.println("Impossible, déjà activé...");
-            return;
-        }
-        System.out.println("Activation du ventilateur du salon..");
-        Fan = true;
-    }
-    /***
-     * Fonction permettant de désactiver le ventilateur du salon
-     */
-    @Override
-    void CloseFan(){
-        if(!Fan){
-            System.out.println("Impossible, déjà arrêté...");
-            return;
-        }
-        System.out.println("Arrêt du ventilateur du salon..");
-        Fan = false; 
-    }
-    /***
      * Fonction permettant d'ouvrir la porte du salon.
      */
-    @Override
-    void OpenDoor(){
+    public void OpenDoor(){
         if(Door){
             System.out.println("Impossible, déjà ouvert...");
             return;
@@ -76,8 +54,7 @@ final class Salon extends Piece{
     /***
      * Fonction permettant de fermer la porte du salon
      */
-    @Override
-    void CloseDoor(){
+    public void CloseDoor(){
         if(Door){
             System.out.println("Impossible, déjà fermée...");
             return;
@@ -85,5 +62,16 @@ final class Salon extends Piece{
         System.out.println("Fermeture de la porte du salon..");
         Door = false; 
     }
-
+    public void DisplayStatutPiece() {
+        System.out.println("Piece : " + NomPiece);
+        System.out.println("Light : " + (Lights ? "ON" : "OFF"));
+        System.out.println("Etat de la porte : " + (Door ? "OUVERT" : "FERME"));
+      }
+    /**
+     * Fonction qui sera exécutée avant l'appel du Gabage Collector de Java, pour libérer la mémoire.
+     * 
+     */
+    protected  void finalize(){
+        System.out.println("Désactivation de l'automation du salon...\n");
+    }
 }
